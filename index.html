@@ -15,7 +15,7 @@
         const sid = urlParams.get('sid');
 
         if (sid) {
-            fetch(`https://script.google.com/macros/s/AKfycbzR9I7FEB4Yi8Z74MFFEBt0p1c4uHuTtEpXXAIAGTM4mdWo9SmpX1e1KUohNmWSQAJD/exec?sid=${sid}`)
+            fetch(`https://script.google.com/macros/s/AKfycbyIC5_BHKT5OgHy3BDTTXBYXYhl89rJ3b9rQC_To1xBdSTeLDOkxwsqZnLv7h7B2bn4/exec?sid=${sid}`)
                 .then(response => response.text())
                 .then(data => {
                     if (data === "Silla no encontrada.") {
