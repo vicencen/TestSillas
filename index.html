@@ -11,11 +11,12 @@
 
     <script>
         // Obtener el ID de la silla desde la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const sid = urlParams.get('sid');
+        const url = new URL(window.location.search);
+        const sid = url.searchParams.get("sid");
+        const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyIC5_BHKT5OgHy3BDTTXBYXYhl89rJ3b9rQC_To1xBdSTeLDOkxwsqZnLv7h7B2bn4/exec
 
         if (sid) {
-            fetch(`https://script.google.com/macros/s/AKfycbyIC5_BHKT5OgHy3BDTTXBYXYhl89rJ3b9rQC_To1xBdSTeLDOkxwsqZnLv7h7B2bn4/exec?sid=${sid}`)
+            fetch(`${AS_URL_BASE}?sid=${sid}`)
                 .then(response => response.text())
                 .then(data => {
                     if (data === "Silla no encontrada.") {
