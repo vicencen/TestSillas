@@ -18,7 +18,11 @@
             fetch(`https://script.google.com/macros/s/AKfycbzR9I7FEB4Yi8Z74MFFEBt0p1c4uHuTtEpXXAIAGTM4mdWo9SmpX1e1KUohNmWSQAJD/exec?sid=${sid}`)
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById("dueno").innerText = data;
+                    if (data === "Silla no encontrada.") {
+                        document.getElementById("dueno").innerText = data;
+                    } else {
+                        document.getElementById("dueno").innerText = `¡Esta silla pertenece a: ${data}!`;
+                    }
                 })
                 .catch(error => {
                     document.getElementById("dueno").innerText = "Error al cargar.";
