@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silla Asignada</title>
+</head>
+<body>
+    <h2>Esta silla pertenece a:</h2>
+    <h1 id="dueno">Cargando...</h1>
+
+    <script>
+        // Obtener el ID de la silla desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sid = urlParams.get('sid');
+
+        if (sid) {
+            fetch(`https://script.google.com/macros/s/AKfycbz-_ta31e22cBrNtmxScPHnzIVwQrcX3YN3wQP1Ttaycl_tRjVbxGVDc957P9DLqrj4/exec?sid=${sid}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("dueno").innerText = data;
+                })
+                .catch(error => {
+                    document.getElementById("dueno").innerText = "Error al cargar.";
+                });
+        } else {
+            document.getElementById("dueno").innerText = "Silla no especificada.";
+        }
+    </script>
+</body>
+</html>
