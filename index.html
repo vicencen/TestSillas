@@ -15,7 +15,7 @@
         const sid = urlParams.get('sid');
 
         if (sid) {
-            fetch(`https://script.google.com/macros/s/AKfycbz-_ta31e22cBrNtmxScPHnzIVwQrcX3YN3wQP1Ttaycl_tRjVbxGVDc957P9DLqrj4/exec?sid=${sid}`)
+            fetch(`https://script.google.com/macros/s/AKfycbzR9I7FEB4Yi8Z74MFFEBt0p1c4uHuTtEpXXAIAGTM4mdWo9SmpX1e1KUohNmWSQAJD/exec?sid=${sid}`)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("dueno").innerText = data;
