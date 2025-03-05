@@ -48,9 +48,12 @@
     }
 
     #username {
-      font-size: 24px;
+      font-size: 10vw;
       font-weight: bold;
       margin-top: 20px;
+      max-width: 90vw;
+      word-wrap: break-word;
+      white-space: pre-line;
     }
   </style>
 </head>
@@ -62,7 +65,7 @@
   <div></div>
 </div>
 
-<h1 id="username">Cargando...</h1>
+<h1 id="username"></h1>
 
 <script>
   const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyIC5_BHKT5OgHy3BDTTXBYXYhl89rJ3b9rQC_To1xBdSTeLDOkxwsqZnLv7h7B2bn4/exec";
@@ -79,7 +82,8 @@
         document.getElementById("loading").style.display = "none";
         
         if (result.trim()) {
-          usernameElement.innerText = `Usuario: ${result}`;
+          const nameParts = result.split(" ");
+          usernameElement.innerText = nameParts.join("\n");
         } else {
           usernameElement.innerText = "No se encontró el usuario.";
         }
