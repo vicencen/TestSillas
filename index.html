@@ -13,7 +13,7 @@
         // Obtener el ID de la silla desde la URL
         const url = new URL(window.location.search);
         const sid = url.searchParams.get("sid");
-        const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyIC5_BHKT5OgHy3BDTTXBYXYhl89rJ3b9rQC_To1xBdSTeLDOkxwsqZnLv7h7B2bn4/exec
+        const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyIC5_BHKT5OgHy3BDTTXBYXYhl89rJ3b9rQC_To1xBdSTeLDOkxwsqZnLv7h7B2bn4/exec"
 
         if (sid) {
             fetch(`${AS_URL_BASE}?sid=${sid}`)
